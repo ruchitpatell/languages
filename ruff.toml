@@ -1,0 +1,33 @@
+target-version = "py310"
+
+# Set the maximum line length to 79.
+line-length = 79
+
+[lint]
+select = [
+    
+    "E",    # pycodestyle
+    "F",    # Pyflakes
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "I",    # isort
+]
+
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+extend-select = [
+    "E501",
+    "D", # docstrings
+]
+
+
+# Show unsafe fixes
+# ruff check --unsafe-fixes
+
+# Apply unsafe fixes
+# ruff check --fix --unsafe-fixes
+
+
+# SETUP LATER: https://docs.astral.sh/ruff
