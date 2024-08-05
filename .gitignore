@@ -1,4 +1,5 @@
 bin/
+.DS_Store
 
 # ------- PYTHON ----------
 # Byte-compiled / optimized / DLL files
