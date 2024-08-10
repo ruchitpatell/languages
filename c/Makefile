@@ -19,8 +19,12 @@ datatypes:
 	$(CC) $(CFLAGS) -c datatypes.c -o datatypes.o
 	$(CC) $(CFLAGS) -o datatypes datatypes.o
 
+control:
+	$(CC) $(CFLAGS) -c control.c -o control.o
+	$(CC) $(CFLAGS) -o control control.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) datatypes
+	rm -f $(EXEC) $(OBJ) control datatypes
 
 # # Run clang-tidy on all source files
 # lint:
