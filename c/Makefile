@@ -15,16 +15,24 @@ $(EXEC): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-datatypes:
-	$(CC) $(CFLAGS) -c datatypes.c -o datatypes.o
-	$(CC) $(CFLAGS) -o datatypes datatypes.o
-
 control:
 	$(CC) $(CFLAGS) -c control.c -o control.o
 	$(CC) $(CFLAGS) -o control control.o
+	rm -f control.o
+
+functions:
+	$(CC) $(CFLAGS) -c functions.c -o functions.o
+	$(CC) $(CFLAGS) -o functions functions.o
+	rm -f functions.o
+
+datatypes:
+	$(CC) $(CFLAGS) -c datatypes.c -o datatypes.o
+	$(CC) $(CFLAGS) -o datatypes datatypes.o
+	rm -f datatypes.o
+
 
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes
+	rm -f $(EXEC) $(OBJ) control datatypes functions
 
 # # Run clang-tidy on all source files
 # lint:
