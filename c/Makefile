@@ -30,9 +30,13 @@ datatypes:
 	$(CC) $(CFLAGS) -o datatypes datatypes.o
 	rm -f datatypes.o
 
+struct:
+	$(CC) $(CFLAGS) -c struct.c -o struct.o
+	$(CC) $(CFLAGS) -o struct struct.o
+	rm -f struct.o
 
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions
+	rm -f $(EXEC) $(OBJ) control datatypes functions struct
 
 # # Run clang-tidy on all source files
 # lint:
