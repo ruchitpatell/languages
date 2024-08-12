@@ -30,9 +30,13 @@ datatypes:
 	$(CC) $(CFLAGS) -o datatypes datatypes.o
 	rm -f datatypes.o
 
+enum:
+	$(CC) $(CFLAGS) -c enum.c -o enum.o
+	$(CC) $(CFLAGS) -o enum enum.o
+	rm -f enum.o
 
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum
 
 # # Run clang-tidy on all source files
 # lint:
