@@ -35,8 +35,13 @@ struct:
 	$(CC) $(CFLAGS) -o struct struct.o
 	rm -f struct.o
 
+enum:
+	$(CC) $(CFLAGS) -c enum.c -o enum.o
+	$(CC) $(CFLAGS) -o enum enum.o
+	rm -f enum.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions struct
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct
 
 # # Run clang-tidy on all source files
 # lint:
