@@ -40,8 +40,13 @@ enum:
 	$(CC) $(CFLAGS) -o enum enum.o
 	rm -f enum.o
 
+union:
+	$(CC) $(CFLAGS) -c union.c -o union.o
+	$(CC) $(CFLAGS) -o union union.o
+	rm -f union.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union
 
 # # Run clang-tidy on all source files
 # lint:
