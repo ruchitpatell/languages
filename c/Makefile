@@ -50,6 +50,11 @@ keywords:
 	$(CC) $(CFLAGS) -o keywords keywords.o
 	rm -f keywords.o
 
+preprocessor:
+	$(CC) $(CFLAGS) -c preprocessor.c -o preprocessor.o
+	$(CC) $(CFLAGS) -o preprocessor preprocessor.o
+	rm -f preprocessor.o
+
 clean:
 	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords
 
