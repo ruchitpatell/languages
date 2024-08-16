@@ -55,8 +55,13 @@ preprocessor:
 	$(CC) $(CFLAGS) -o preprocessor preprocessor.o
 	rm -f preprocessor.o
 
+argparse:
+	$(CC) $(CFLAGS) -c argparse.c -o argparse.o
+	$(CC) $(CFLAGS) -o argparse argparse.o
+	rm -f argparse.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse
 
 # # Run clang-tidy on all source files
 # lint:
