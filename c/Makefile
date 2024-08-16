@@ -45,8 +45,23 @@ union:
 	$(CC) $(CFLAGS) -o union union.o
 	rm -f union.o
 
+keywords:
+	$(CC) $(CFLAGS) -c keywords.c -o keywords.o
+	$(CC) $(CFLAGS) -o keywords keywords.o
+	rm -f keywords.o
+
+preprocessor:
+	$(CC) $(CFLAGS) -c preprocessor.c -o preprocessor.o
+	$(CC) $(CFLAGS) -o preprocessor preprocessor.o
+	rm -f preprocessor.o
+
+argparse:
+	$(CC) $(CFLAGS) -c argparse.c -o argparse.o
+	$(CC) $(CFLAGS) -o argparse argparse.o
+	rm -f argparse.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse
 
 # # Run clang-tidy on all source files
 # lint:
