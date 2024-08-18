@@ -60,8 +60,13 @@ argparse:
 	$(CC) $(CFLAGS) -o argparse argparse.o
 	rm -f argparse.o
 
+pointers:
+	$(CC) $(CFLAGS) -c pointers.c -o pointers.o
+	$(CC) $(CFLAGS) -o pointers pointers.o
+	rm -f pointers.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse pointers
 
 # # Run clang-tidy on all source files
 # lint:
