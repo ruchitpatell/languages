@@ -65,8 +65,13 @@ pointers:
 	$(CC) $(CFLAGS) -o pointers pointers.o
 	rm -f pointers.o
 
+undefined:
+	$(CC) -Wno-everything -c undefined.c -o undefined.o
+	$(CC) -Wno-everything -o undefined undefined.o
+	rm -f undefined.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse pointers
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse pointers undefined
 
 # # Run clang-tidy on all source files
 # lint:
