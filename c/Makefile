@@ -70,8 +70,13 @@ undefined:
 	$(CC) -Wno-everything -o undefined undefined.o
 	rm -f undefined.o
 
+memory:
+	$(CC) -Wno-everything -c memory.c -o memory.o
+	$(CC) -Wno-everything -o memory memory.o
+	rm -f memory.o
+
 clean:
-	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse pointers undefined
+	rm -f $(EXEC) $(OBJ) control datatypes functions enum struct union keywords preprocessor argparse pointers undefined memory
 
 # # Run clang-tidy on all source files
 # lint:
